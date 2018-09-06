@@ -1,0 +1,18 @@
+<h1>Home</h1>
+
+<form action="/users" method="post">
+  <h2>Signup Form</h2>
+  <input type="text" name="name" placeholder="Enter Name">
+  <input type="email" name="email" placeholder="Enter Email">
+  <button>Submit</button>
+</form>
+
+{{#each users}}
+  <div class="user">
+    <h3>Name: {{name}}</h3>
+    <p>Email: {{email}}</p>
+    <form action="/users/{{_id}}?_method=DELETE" method="post">
+      <button>Delete</button>
+    </form>
+  </div>
+{{/each}}
